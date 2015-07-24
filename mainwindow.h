@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QXmlReader>
+#include <QXmlStreamReader>
 #include<QString>
 #include "entry.h"
 
@@ -25,7 +25,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QString filename;
-    QXmlReader xml;
+    QXmlStreamReader xml;
 };
 
 #endif // MAINWINDOW_H

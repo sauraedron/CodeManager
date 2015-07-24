@@ -7,7 +7,7 @@
 #include <QDebug>
 #include <QLinkedList>
 #include <QXmlStreamReader>
-#include "entry.h"
+
 
 addEntry::addEntry(QWidget *parent) :
     QDialog(parent),
@@ -23,7 +23,7 @@ addEntry::addEntry(QWidget *parent) :
     //set todays date
     ui->attemptDate->setDate(QDate::currentDate());
     ui->completionDate->setDate(QDate::currentDate());
-    ReadData();
+
 }
 
 addEntry::~addEntry()
