@@ -4,7 +4,7 @@ using namespace std;
 #include <vector>
 int main()
 {
-vector<string> v = {"site","url","need_to_solve_again","new_concept","brute_force","combinatorics","dynamic_programming","graphs",
+vector<string> v = {"brute_force","combinatorics","dynamic_programming","graphs",
           "greedy", "implementation", "probabilty","sorting","binarySearch","fft","bitmasks","numbertheory","shortestpaths","_2sat","games",
             "hashing","constructive_algorithms","datastructures","string_suffix_structures","matrices","meet_in_the_middle","flows","divideandconquer",
             "geometry" ,"twopointers","dsu","ternarysearch","trees", "disjoint_set", "Ad_hoc", "hash_map", "bit_manipulation", "dfs", "bfs", "sieve", "priority_queue",
