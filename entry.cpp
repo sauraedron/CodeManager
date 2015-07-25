@@ -1,8 +1,8 @@
 #include "entry.h"
 
-entry::entry(QString site, QString doa, QString doc, QString url, QString new_concept,
+Entry::Entry(QString site, QString doa, QString doc, QString url, QString new_concept,
              QString bf, QString comb, QString dp, QString graphs, QString greedy,
-             QString implementation, QString prob, QString sorting, QString trees)
+             QString implementation, QString prob, QString sorting, QString trees, QString nsa)
 {
     this->site = site;
     this->doa = doa;
@@ -18,5 +18,6 @@ entry::entry(QString site, QString doa, QString doc, QString url, QString new_co
     this->probabilty = prob;
     this->sorting = sorting;
     this->trees = trees;
+    this->need_to_solve_again = nsa;
 
 }

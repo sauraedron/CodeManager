@@ -15,40 +15,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::readData()
 {
-    QFile xmlFile(filename);
-    xmlFile.open(QFile::ReadOnly);
-    xml.setDevice(&xmlFile);
-
-    //codeManager
-    xml.readNextStartElement();
-    qDebug()<<xml.name()<<" "<<xml.text();
-
-    //number
-    xml.readNextStartElement();
-    qDebug()<<xml.name()<<" "<<xml.readElementText();
-
-    //site
-    xml.readNextStartElement();
-    qDebug()<<xml.name()<<" "<<xml.readElementText();
-
-    //doa
-    xml.readNextStartElement();
-    qDebug()<<xml.name()<<" "<<xml.readElementText();
-
-    //doc
-    xml.readNextStartElement();
-    qDebug()<<xml.name()<<" "<<xml.readElementText();
-
-    //url
-    xml.readNextStartElement();
-    qDebug()<<xml.name()<<" "<<xml.readElementText();
-
-    //newConcept
-    xml.readNextStartElement();
-    qDebug()<<xml.name()<<" "<<xml.readElementText();
-
-
-
 }
 
 MainWindow::~MainWindow()

@@ -2,7 +2,10 @@
 #define ADDENTRY_H
 
 #include <QDialog>
+#include <QXmlStreamWriter>
+#include <QFile>
 #include <QLinkedList>
+#include "entry.h"
 
 namespace Ui {
 class addEntry;
@@ -14,6 +17,7 @@ class addEntry : public QDialog
 
 public:
     explicit addEntry(QWidget *parent = 0);
+    QLinkedList<Entry> list;
     ~addEntry();
 
 private slots:
@@ -21,6 +25,8 @@ private slots:
 
 private:
     Ui::addEntry *ui;
+    QString filename;
+
 };
 
 #endif // ADDENTRY_H

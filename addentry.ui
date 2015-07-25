@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>561</width>
-    <height>408</height>
+    <width>958</width>
+    <height>395</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,8 +42,8 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>250</y>
+     <x>180</x>
+     <y>440</y>
      <width>101</width>
      <height>16</height>
     </rect>
@@ -114,70 +114,35 @@
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>100</y>
+     <x>310</x>
+     <y>140</y>
      <width>255</width>
      <height>148</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="0">
+    <item row="1" column="0">
      <widget class="QCheckBox" name="chk_probab">
       <property name="text">
        <string>Probabilty</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QCheckBox" name="chk_cmb">
-      <property name="text">
-       <string>Combinatorics</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QCheckBox" name="chk_dp">
-      <property name="text">
-       <string>Dynamic Programmin</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="1">
-     <widget class="QCheckBox" name="chk_grap">
-      <property name="text">
-       <string>Graphs</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QCheckBox" name="chk_greed">
-      <property name="text">
-       <string>Greedy</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QCheckBox" name="chk_imple">
-      <property name="text">
-       <string>Implementation</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
      <widget class="QCheckBox" name="chk_sort">
       <property name="text">
        <string>Sorting</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QCheckBox" name="chk_bf">
+    <item row="0" column="1">
+     <widget class="QCheckBox" name="chk_imple">
       <property name="text">
-       <string>Brute Force</string>
+       <string>Implementation</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
+    <item row="2" column="0">
      <widget class="QCheckBox" name="chk_trees">
       <property name="text">
        <string>Trees</string>
@@ -225,8 +190,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>340</y>
+     <x>460</x>
+     <y>460</y>
      <width>85</width>
      <height>27</height>
     </rect>
@@ -238,8 +203,8 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>340</y>
+     <x>550</x>
+     <y>460</y>
      <width>85</width>
      <height>27</height>
     </rect>
@@ -251,7 +216,7 @@
   <widget class="QLCDNumber" name="lcdNumber">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>490</x>
      <y>10</y>
      <width>64</width>
      <height>23</height>
@@ -293,8 +258,8 @@
   <widget class="QWidget" name="layoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>250</y>
+     <x>300</x>
+     <y>440</y>
      <width>48</width>
      <height>48</height>
     </rect>
@@ -315,6 +280,354 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="lproblem_name">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>20</y>
+     <width>49</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Problem Name</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="problem_name_ledit">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>10</y>
+     <width>113</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_adhoc">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>300</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Adhoc</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_2sat">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>300</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>2sat</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_bfs">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>300</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>bfs</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_bin_search">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>300</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>binarysearch</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_bipartite_graph">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>300</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bipartite_grap</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_bitmanip">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>300</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bit Manipulation</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_bit_masks">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>300</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bit Maska</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_bf">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>300</y>
+     <width>135</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Brute Force</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_cmb">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>300</y>
+     <width>114</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Combinatorics</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>300</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Constructive algorithmss</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_ds">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>330</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Data Structure</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_dfs">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>330</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>DFS</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_disj_set">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>330</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Disjoint set</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_divide_and_conq">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>330</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Divide and conq</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_dsu">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>330</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>dsu</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_factorization">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>330</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Factorization</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_dp">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>330</y>
+     <width>135</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dynamic Programmin</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_fenwicktree">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>330</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Fenwick Tree</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_fft">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>330</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>fft</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="flows">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>330</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Flows</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_games">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>380</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Games</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_gcd">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>380</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>GCD</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_geometry">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>380</y>
+     <width>78</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Geometry</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_grap">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>380</y>
+     <width>124</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Graphs</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_greed">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>390</y>
+     <width>125</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Greedy</string>
+   </property>
   </widget>
  </widget>
  <resources/>

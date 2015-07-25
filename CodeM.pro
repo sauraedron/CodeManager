@@ -23,3 +23,6 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     addentry.ui
+
+OTHER_FILES += \
+    stale.txt

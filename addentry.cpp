@@ -1,12 +1,15 @@
-#include "addentry.h"
+
 #include <QMessageBox>
 #include <QXmlStreamWriter>
-#include "ui_addentry.h"
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
 #include <QLinkedList>
 #include <QXmlStreamReader>
+
+#include "addentry.h"
+#include "ui_addentry.h"
+#include <entry.h>
 
 
 addEntry::addEntry(QWidget *parent) :
@@ -24,6 +27,8 @@ addEntry::addEntry(QWidget *parent) :
     ui->attemptDate->setDate(QDate::currentDate());
     ui->completionDate->setDate(QDate::currentDate());
 
+    this->filename = "codem.xml";
+
 }
 
 addEntry::~addEntry()
@@ -33,141 +38,58 @@ addEntry::~addEntry()
 
 void addEntry::on_pushButton_clicked()
 {
-    QString filename = "codem.xml";
-//Write contents
-    QFile mfile(filename);
-    if(!mfile.open(QFile::WriteOnly | QFile::Text| QFile::Append))
+    QString site = ui->sites_combobox->currentText();;
+    QString doa = ui->attemptDate->date().toString(); //date of attempt
+    QString doc = ui->completionDate->date().toString(); //date of completion
+    QString url = ui->url_ledit->text();
+    //tags
+    QString new_concept = (ui->nc_y->isChecked()) ? "yes": "no";
+    QString brute_force = (ui->chk_bf->isChecked()) ?"yes": "no";
+    QString combinatorics =(ui->chk_cmb->isChecked()) ? "yes" : "no";
+    QString dynamic_programming = (ui->chk_dp->isChecked()) ? "yes": "no";
+    QString graphs = (ui->chk_grap->isChecked()) ? "yes": "no";
+    QString greedy=(ui->chk_greed->isChecked()) ? "yes": "no";
+    QString implementation = (ui->chk_imple->isChecked()) ? "yes": "no";
+    QString probabilty = (ui->chk_probab->isChecked()) ? "yes": "no";
+    QString sorting = (ui->chk_sort->isChecked()) ? "yes": "no";
+    QString trees  = (ui->chk_trees->isChecked()) ? "yes": "no";
+    QString need_to_solve_again = (ui->nsa_y->isChecked())? "yes": "no";
+    list.push_back(Entry (site,  doa,  doc,  url,  new_concept,brute_force,
+                          combinatorics,  dynamic_programming,  graphs,  greedy,
+                          implementation,  probabilty,  sorting,  trees, need_to_solve_again));
+
+    //push onto linked list
+
+
+
+    QFile file(filename);
+    file.open(QFile::WriteOnly);
+    QXmlStreamWriter xml(&file);
+    xml.setAutoFormatting(true);
+    xml.writeStartDocument();
+    xml.writeStartElement("CodeM");
     {
-        qDebug()<<"Could not open the file for writing";
-        return ;
+        for(QLinkedList<Entry>::iterator it = list.begin(); it!=list.end(); ++it)
+        {
+            xml.writeTextElement("site", it->site);
+            xml.writeTextElement("doa", doa);
+            xml.writeTextElement("doc", doc);
+            xml.writeTextElement("url", url);
+            xml.writeTextElement("new_concept", new_concept);
+            xml.writeTextElement("brute_force", brute_force);
+            xml.writeTextElement("combinatorics", combinatorics);
+            xml.writeTextElement("dynamic_programming", dynamic_programming);
+            xml.writeTextElement("graphs", graphs);
+            xml.writeTextElement("greedy", greedy);
+            xml.writeTextElement("implementation", implementation);
+            xml.writeTextElement("probabilty", probabilty);
+            xml.writeTextElement("sorting", sorting);
+            xml.writeTextElement("trees", trees);
+            xml.writeTextElement("need_to_solve_again", need_to_solve_again);
+        }
+
     }
-    /*
-    xw.writeStartElement("");
-    xw.writeCDATA();
-    xw.writeEndElement();
-    */
-    QXmlStreamWriter xw(&mfile);
-    xw.writeStartDocument();
-    xw.setAutoFormatting(true);
-    xw.writeStartElement("CodeManager");
-    xw.writeStartElement("number");
-    xw.writeCDATA("0");
-    xw.writeEndElement();
+    xml.writeEndElement();
+    file.close();
 
-    xw.writeStartElement("site");
-    xw.writeCDATA(ui->sites_combobox->currentText());
-    xw.writeEndElement();
-
-    xw.writeStartElement("doa");
-    xw.writeCDATA(ui->attemptDate->date().toString());
-    xw.writeEndElement();
-
-    xw.writeStartElement("doc");
-    xw.writeCDATA(ui->completionDate->date().toString());
-    xw.writeEndElement();
-
-    xw.writeStartElement("url");
-    xw.writeCDATA(ui->url_ledit->text());
-    xw.writeEndElement();
-
-    xw.writeStartElement("newconcept");
-    if(ui->nc_y->isChecked())
-        xw.writeCDATA("yes");
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();
-
-    //tags start here
-
-    xw.writeStartElement("bruteforce");
-    if(ui->chk_bf->isChecked())
-    {
-        xw.writeCDATA("yes");
-    }
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();
-
-    xw.writeStartElement("combinatorics");
-    if(ui->chk_cmb->isChecked())
-    {
-        xw.writeCDATA("yes");
-    }
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();
-
-    xw.writeStartElement("dyanmicprogramming");
-    if(ui->chk_dp->isChecked())
-    {
-        xw.writeCDATA("yes");
-    }
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();
-
-    xw.writeStartElement("graph");
-    if(ui->chk_grap->isChecked())
-    {
-        xw.writeCDATA("yes");
-    }
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();
-
-    xw.writeStartElement("greedy");
-    if(ui->chk_greed->isChecked())
-    {
-        xw.writeCDATA("yes");
-    }
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();
-
-    xw.writeStartElement("implementation");
-    if(ui->chk_imple->isChecked())
-    {
-        xw.writeCDATA("yes");
-    }
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();
-
-    xw.writeStartElement("probability");
-    if(ui->chk_probab->isChecked())
-    {
-        xw.writeCDATA("yes");
-    }
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();
-
-    xw.writeStartElement("sorting");
-    if(ui->chk_sort->isChecked())
-    {
-        xw.writeCDATA("yes");
-    }
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();
-
-    xw.writeStartElement("trees");
-    if(ui->chk_trees->isChecked())
-    {
-        xw.writeCDATA("yes");
-    }
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();
-
-    xw.writeStartElement("need_to_solve_again");
-    if(ui->nsa_y)
-        xw.writeCDATA("yes");
-    else
-        xw.writeCDATA("no");
-    xw.writeEndElement();\
-
-    xw.writeEndElement();
-
-    mfile.close();
 }

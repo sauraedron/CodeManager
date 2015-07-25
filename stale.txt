@@ -1,0 +1,70 @@
+       xml.writeTextElement("site", ui->sites_combobox->currentText());
+//       xml.writeTextElement();
+         xml.writeTextElement("date_of_attempt", ui->attemptDate->date().toString());
+         xml.writeTextElement("date_of_completion", ui->completionDate->date().toString());
+         xml.writeTextElement("url", ui->url_ledit->text());
+         if(ui->nc_no->isChecked())
+            xml.writeTextElement("new_concept", "no");
+         else
+             xml.writeTextElement("new_concept", "yes");
+
+         //tags
+         //bf
+         if(ui->chk_bf->isChecked())
+            xml.writeTextElement("brute_force", "yes");
+         else
+            xml.writeTextElement("brute_force", "no");
+
+         //combinatroics
+         if(ui->chk_cmb->isChecked())
+             xml.writeTextElement("combinatorics", "yes");
+         else
+             xml.writeTextElement("combinatorics", "no");
+
+         //dp
+         if(ui->chk_dp->isChecked())
+             xml.writeTextElement("dp", "yes");
+         else
+             xml.writeTextElement("dp", "no");
+
+         //graph
+         if(ui->chk_grap->isChecked())
+             xml.writeTextElement("graph", "yes");
+         else
+            xml.writeTextElement("graph", "no");
+
+         //greddy
+         if(ui->chk_greed->isChecked())
+             xml.writeTextElement("greedy", "yes");
+         else
+             xml.writeTextElement("greedy", "no");
+
+         //implementaion
+         if(ui->chk_imple->isChecked())
+             xml.writeTextElement("implementation", "yes");
+         else
+             xml.writeTextElement("implementation", "no");
+
+         //probab
+         if(ui->chk_probab->isChecked())
+             xml.writeTextElement("probability", "yes");
+         else
+             xml.writeTextElement("probability", "no");
+
+         //sorting
+         if(ui->chk_sort->isChecked())
+             xml.writeTextElement("sorting", "yes");
+         else
+             xml.writeTextElement("sorting", "no");
+
+         //trees
+         if(ui->chk_trees->isChecked())
+             xml.writeTextElement("trees", "yes");
+         else
+             xml.writeTextElement("trees", "no");
+
+         //again ?
+         if(ui->nsa_y)
+             xml.writeTextElement("need_to_solve_again", "yes");
+         else
+             xml.writeTextElement("need_to_solve_again", "no");
